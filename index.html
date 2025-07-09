@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더하기 빨리 계산하기!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 게임 컨테이너 -->
+    <div class="game-container">
+        <!-- 시작 화면 -->
+        <div id="startScreen" class="screen active">
+            <h1>아미고톡<br>🧮더하기 게임!🧮</h1>
+            <div class="instructions">
+                <p>👉 5초 안에 문제를 풀고 정답을 입력하세요!</p>
+                <p>3문제 연속 정답 시 음료수 쿠폰이 지급됩니다!</p>
+                <p>준비되면 시작 버튼을 눌러주세요!</p>
+            </div>
+            <button id="startButton" class="btn">시작하기 ▶️</button>
+        </div>
+
+        <!-- 게임 화면 -->
+        <div id="gameScreen" class="screen">
+            <div class="score">연속 정답: <span id="score">0</span>/3</div>
+            <div class="timer-bar">
+                <div id="timerProgress"></div>
+            </div>
+            <div class="problem">
+                <span id="num1">23</span> + <span id="num2">17</span> = ?
+            </div>
+            <div class="answer-input">
+                <input type="number" id="answerInput" placeholder="답을 입력하세요">
+                <button id="submitButton" class="btn">확인</button>
+            </div>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div id="resultScreen" class="screen">
+            <h2 id="resultMessage"></h2>
+            <div class="button-group">
+                <button id="retryButton" class="btn">다시 하기 🔁</button>
+                <button id="homeButton" class="btn">홈으로 🏠</button>
+            </div>
+        </div>
+
+        <!-- 쿠폰 화면 -->
+        <div id="couponScreen" class="screen">
+            <h2>🎉 축하합니다! 3문제를 연속 정답하셨어요!</h2>
+            <div id="couponContainer">
+                <canvas id="couponCanvas"></canvas>
+            </div>
+            <div class="button-group">
+                <button id="saveCouponButton" class="btn">쿠폰 저장하기 💾</button>
+                <button id="couponHomeButton" class="btn">홈으로 🏠</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 오디오 요소 -->
+    <audio id="successSound" src="/assets/sounds/Ascending3.mp3"></audio>
+    <audio id="failSound" src="/assets/sounds/fail_01.mp3"></audio>
+    <audio id="couponSound" src="/assets/sounds/suc_01.mp3"></audio>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html> 
