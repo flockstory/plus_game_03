@@ -116,7 +116,7 @@ function handleWrongAnswer() {
     
     // 실패 이미지 애니메이션
     const failImg = new Image();
-    failImg.src = '/assets/images/ggg.png';
+    failImg.src = 'assets/images/ggg.png';
     failImg.style.position = 'absolute';
     failImg.style.left = '-100px';
     failImg.style.top = '50%';
